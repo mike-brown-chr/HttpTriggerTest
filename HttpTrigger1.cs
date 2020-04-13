@@ -17,8 +17,8 @@ namespace HttpTriggerTest
             [HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)] HttpRequest req,
             [Queue("outqueue"), StorageAccount("AzureWebJobsStorage")] ICollector<string> msg,
             [CosmosDB(
-                databaseName: "mdb-func-test-db",
-                collectionName: "myContainer",
+                databaseName: "dev-mdb-sqldb-sql",
+                collectionName: "omergherd",
                 ConnectionStringSetting = "CosmosDBConnString")] IAsyncCollector<object>  dbrec,
             ILogger log)
         {
